@@ -13,21 +13,23 @@ public class ToggleTextOnClick : MonoBehaviour
         //public Text OrganName; //The UI text element to display Organ name
         public string OrganName; //The name of Organ
 
-        private Outline outlineEffect;
+        //private Outline Outline;
+
+        
     
         //Initialize and find the outline script
-        public void Initialize()
+        /*public void Initialize()
         {
-            outlineEffect = targetOrgan.GetComponent<Outline>();
+            Outline = targetOrgan.GetComponent<Outline>();
 
         }
 
         //Toggle the outline on and off
-        /*public void Awake()
+        public void UpdateMaterialProperties()
         {
-            if(outlineEffect != null)
+            if(Outline != null)
             {
-                outlineEffect.Awake();
+                Outline.UpdateMaterialProperties();
             }
         }*/
     
@@ -46,7 +48,7 @@ public class ToggleTextOnClick : MonoBehaviour
             {
                 data.OrganText.SetActive(false);
             }
-            data.Initialize();
+            //data.Initialize();
         }
     }
 
