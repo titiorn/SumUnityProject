@@ -11,11 +11,28 @@ public class ToggleTextOnClick : MonoBehaviour
         public GameObject OrganText; // The parent GameObject that contains text and its arrow image
         
         //public Text OrganName; //The UI text element to display Organ name
-        
         public string OrganName; //The name of Organ
-        public Material outlineMat; //The material used for the outline
-        private MeshRenderer meshRenderer; //The MeshRenderer component of each organ
+
+        private Outline outlineEffect;
+    
+        //Initialize and find the outline script
+        public void Initialize()
+        {
+            outlineEffect = targetOrgan.GetComponent<Outline>();
+
+        }
+
+        //Toggle the outline on and off
+        /*public void Awake()
+        {
+            if(outlineEffect != null)
+            {
+                outlineEffect.Awake();
+            }
+        }*/
+    
     }
+
 
     public InteractionData[] interactionOrgans; //Use array to hold interaction data for multiple objects
 
@@ -29,6 +46,7 @@ public class ToggleTextOnClick : MonoBehaviour
             {
                 data.OrganText.SetActive(false);
             }
+            data.Initialize();
         }
     }
 
@@ -56,6 +74,9 @@ public class ToggleTextOnClick : MonoBehaviour
 
     void ToggleInteraction(InteractionData data)
     {
+        //Toggle the outline
+        //data.ToggleOutline();
+
         //Check if the text and arrow are currently active
         bool isActive = data.OrganText.activeSelf;
 
@@ -73,8 +94,11 @@ public class ToggleTextOnClick : MonoBehaviour
         //Hide other UI elements
         foreach(var otherData in interactionOrgans)
         {
-            if(otherData != data)
+            if(otherData != data && otherData.OrganText != null)
             {
+                //otherData.OrganText.SetActive(false);
+                //otherData.ToggleOutline(); //Remove outline from other objects
+
                 if(otherData.OrganText != null)
                 {
                     //otherData.OrganText.SetActive(false);

@@ -315,8 +315,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 0.69407, b: 0.9820137, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -1388,8 +1388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.9882353, g: 1, b: 0.59607846, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -1708,8 +1708,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.48921824, g: 0.99078345, b: 1, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -2179,8 +2179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.49019608, g: 0.99215686, b: 1, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -2597,8 +2597,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 0.69411767, b: 0.98039216, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -2936,8 +2936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.98656046, g: 1, b: 0.59703493, a: 1}
-  outlineWidth: 5
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -2995,25 +2995,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b197d35397479c49bff9caf6bbf81f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionLymphNodes:
-  - targetLN: {fileID: 1249076147}
-    LymphNodeText: {fileID: 205447026}
-    LymphNodeName: MandiLN
-  - targetLN: {fileID: 1801516753}
-    LymphNodeText: {fileID: 517453605}
-    LymphNodeName: MedRetroLN
-  - targetLN: {fileID: 41634690}
-    LymphNodeText: {fileID: 1257409239}
-    LymphNodeName: SupCerLN
-  - targetLN: {fileID: 1422272165}
-    LymphNodeText: {fileID: 767193370}
-    LymphNodeName: HyoidVenous
-  - targetLN: {fileID: 890223740}
-    LymphNodeText: {fileID: 796076838}
-    LymphNodeName: Trachea
-  - targetLN: {fileID: 1652784830}
-    LymphNodeText: {fileID: 1896457186}
-    LymphNodeName: Thyroid
+  interactionOrgans:
+  - targetOrgan: {fileID: 1249076147}
+    OrganText: {fileID: 205447026}
+    OrganName: 
+  - targetOrgan: {fileID: 1801516753}
+    OrganText: {fileID: 517453605}
+    OrganName: 
+  - targetOrgan: {fileID: 41634690}
+    OrganText: {fileID: 1257409239}
+    OrganName: 
+  - targetOrgan: {fileID: 1422272165}
+    OrganText: {fileID: 767193370}
+    OrganName: 
+  - targetOrgan: {fileID: 890223740}
+    OrganText: {fileID: 796076838}
+    OrganName: 
+  - targetOrgan: {fileID: 1652784830}
+    OrganText: {fileID: 1896457186}
+    OrganName: 
 --- !u!1 &1896457186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,8 +3345,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1539894427}
-  - {fileID: 1920093519}
   - {fileID: 1836107269}
+  - {fileID: 1920093519}
   - {fileID: 2017775288}
   m_Father: {fileID: 876054901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
