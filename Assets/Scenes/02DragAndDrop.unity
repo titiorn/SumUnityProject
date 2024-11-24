@@ -2727,7 +2727,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &786535258
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6399,7 +6399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1573217358
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7163,6 +7163,8 @@ GameObject:
   - component: {fileID: 1669545826}
   - component: {fileID: 1669545828}
   - component: {fileID: 1669545827}
+  - component: {fileID: 1669545830}
+  - component: {fileID: 1669545829}
   m_Layer: 5
   m_Name: TextMandiLN
   m_TagString: Untagged
@@ -7286,6 +7288,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669545825}
   m_CullTransparentMesh: 1
+--- !u!114 &1669545829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669545825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2733712c9c185094c8a3ea5680cee250, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &1669545830
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669545825}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1702392300
 GameObject:
   m_ObjectHideFlags: 0

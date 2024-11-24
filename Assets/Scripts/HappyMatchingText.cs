@@ -1,42 +1,88 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    //public TextMeshProUGUI draggableText; // UI Text element to be placed
+    [System.Serializable]
+    public class DraggableText
+    {
+        public TextMeshProUGUI textObj; //Text to be dragged
+        [HideInInspector] public RectTransform rectTransform;
+        [HideInInspector] public CanvasGroup canvasGroup;
+    }
+
+    public List<DraggableText> draggableTexts; //List of draggable texts
     private Canvas canvas;
-    private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    private DraggableText currentDraggableText;
+
+    //private RectTransform rectTransform;
+    //private CanvasGroup canvasGroup;
     
     private void Awake()
     {
-        rectTransform = GetComponent<RectTransform>();
-        canvasGroup = GetComponent<CanvasGroup>();
         canvas = GetComponentInParent<Canvas>();
+
+        //cache RectTransform and CanvasGroup for each draggable text
+        foreach(var draggable in draggableTexts)
+        {
+            draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
+            draggable.canvasGroup = draggable.textObj.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        /*rectTransform = GetComponent<RectTransform>();*/
+        /*canvasGroup = GetComponent<CanvasGroup>();*/
+        /*canvas = GetComponentInParent<Canvas>();*/
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        currentDraggableText = GetDraggableTextUnderPointer(eventData);
+        if(currentDraggableText != null)
+        {
+            currentDraggableText.canvasGroup.alpha = 0.6f;
+            currentDraggableText.canvasGroup.blocksRaycasts = false; //Allow text to be dragged through other UI elements
+        }
+
+        //canvasGroup.alpha = 0.6f;
+        //canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
-        rectTransform.localPosition = localPoint;
+        if(currentDraggableText != null)
+        {
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
+            currentDraggableText.rectTransform.localPosition = localPoint;
+        }
+
+        //RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
+        //rectTransform.localPosition = localPoint;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        if(currentDraggableText != null)
+        {
+            currentDraggableText.canvasGroup.alpha = 1f;
+            currentDraggableText.canvasGroup.blocksRaycasts = true;
+            currentDraggableText = null;
+        }
+        //canvasGroup.alpha = 1f;
+        //canvasGroup.blocksRaycasts = true;
     }
     
+    private DraggableText GetDraggableTextUnderPointer(PointerEventData eventData)
+    {
+        foreach(var draggable in draggableTexts)
+        {
+            if(RectTransformUtility.RectangleContainsScreenPoint(draggable.rectTransform,eventData.position, canvas.worldCamera))
+            {
+                return draggable;
+            }
+        }
+        return null;
+    }
 }
