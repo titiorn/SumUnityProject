@@ -2996,24 +2996,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionOrgans:
-  - targetOrgan: {fileID: 1249076147}
-    OrganText: {fileID: 205447026}
-    OrganName: 
-  - targetOrgan: {fileID: 1801516753}
-    OrganText: {fileID: 517453605}
-    OrganName: 
-  - targetOrgan: {fileID: 41634690}
-    OrganText: {fileID: 1257409239}
-    OrganName: 
-  - targetOrgan: {fileID: 1422272165}
-    OrganText: {fileID: 767193370}
-    OrganName: 
-  - targetOrgan: {fileID: 890223740}
-    OrganText: {fileID: 796076838}
-    OrganName: 
-  - targetOrgan: {fileID: 1652784830}
-    OrganText: {fileID: 1896457186}
-    OrganName: 
+  - OrganName: MandiLN
+    targetObj: {fileID: 1249076147}
+    ObjText: {fileID: 205447026}
+    outlineScript: {fileID: 0}
+  - OrganName: MedRetroLN
+    targetObj: {fileID: 1801516753}
+    ObjText: {fileID: 517453605}
+    outlineScript: {fileID: 0}
+  - OrganName: SupCerLN
+    targetObj: {fileID: 41634690}
+    ObjText: {fileID: 1257409239}
+    outlineScript: {fileID: 0}
+  - OrganName: HyoidVenous
+    targetObj: {fileID: 1422272165}
+    ObjText: {fileID: 767193370}
+    outlineScript: {fileID: 0}
+  - OrganName: Trachea
+    targetObj: {fileID: 890223740}
+    ObjText: {fileID: 796076838}
+    outlineScript: {fileID: 0}
+  - OrganName: Thyroid
+    targetObj: {fileID: 1652784830}
+    ObjText: {fileID: 1896457186}
+    outlineScript: {fileID: 0}
 --- !u!1 &1896457186
 GameObject:
   m_ObjectHideFlags: 0

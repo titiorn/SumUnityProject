@@ -7,31 +7,19 @@ public class ToggleTextOnClick : MonoBehaviour
     [System.Serializable]
     public class InteractionData
     {
-        public GameObject targetOrgan; //Organ to click on
-        public GameObject OrganText; // The parent GameObject that contains text and its arrow image
-        
-        //public Text OrganName; //The UI text element to display Organ name
         public string OrganName; //The name of Organ
-
-        //private Outline Outline;
-
-        
+        public GameObject targetObj; //Organ to click on
+        public GameObject ObjText; // The parent GameObject that contains text and its arrow image
     
-        //Initialize and find the outline script
-        /*public void Initialize()
-        {
-            Outline = targetOrgan.GetComponent<Outline>();
+        public Outline outlineScript; //Link with Outline Script that assign in each obj
 
-        }
-
-        //Toggle the outline on and off
-        public void UpdateMaterialProperties()
+        public void ToggleOutline()
         {
-            if(Outline != null)
+            if(outlineScript != null)
             {
-                Outline.UpdateMaterialProperties();
+                outlineScript.enabled = !outlineScript.enabled;
             }
-        }*/
+        }
     
     }
 
@@ -44,11 +32,17 @@ public class ToggleTextOnClick : MonoBehaviour
         //Ensure all texts and their arrow children are hidden at the start
         foreach(var data in interactionOrgans)
         {
-            if(data.OrganText != null)
+            if(data.ObjText != null)
             {
-                data.OrganText.SetActive(false);
+                data.ObjText.SetActive(false);
             }
-            //data.Initialize();
+
+            data.outlineScript = data.targetObj.GetComponent<Outline>();
+            if(data.outlineScript != null)
+            {
+                data.outlineScript.enabled = false;
+            }
+
         }
     }
 
@@ -64,7 +58,7 @@ public class ToggleTextOnClick : MonoBehaviour
             {
                 foreach(var data in interactionOrgans)
                 {
-                    if(hit.transform.gameObject == data.targetOrgan)
+                    if(hit.transform.gameObject == data.targetObj)
                     {
                         ToggleInteraction(data);
                         break;
@@ -77,33 +71,29 @@ public class ToggleTextOnClick : MonoBehaviour
     void ToggleInteraction(InteractionData data)
     {
         //Toggle the outline
-        //data.ToggleOutline();
+        data.ToggleOutline();
 
         //Check if the text and arrow are currently active
-        bool isActive = data.OrganText.activeSelf;
+        bool isActive = data.ObjText.activeSelf;
 
         //Toggle the visibility
-        data.OrganText.SetActive(!isActive);
+        data.ObjText.SetActive(!isActive);
 
-
-        //Show the parent GameObj (Organtext and arrow)
-        /*if(data.OrganText != null)
-        {
-            data.OrganText.SetActive(true);
-            //data.OrganText.text = data.LNname;
-        }*/
 
         //Hide other UI elements
         foreach(var otherData in interactionOrgans)
         {
-            if(otherData != data && otherData.OrganText != null)
+            if(otherData != data && otherData.ObjText != null)
             {
-                //otherData.OrganText.SetActive(false);
-                //otherData.ToggleOutline(); //Remove outline from other objects
 
-                if(otherData.OrganText != null)
+                if(otherData.outlineScript != null)
                 {
-                    //otherData.OrganText.SetActive(false);
+                    otherData.outlineScript.enabled = false;
+                }
+
+                if(otherData.ObjText != null)
+                {
+                    //otherData.ObjText.SetActive(false);
                 }
             }
         }
