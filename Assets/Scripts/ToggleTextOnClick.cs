@@ -7,25 +7,27 @@ public class ToggleTextOnClick : MonoBehaviour
     [System.Serializable]
     public class InteractionData
     {
-        public GameObject targetLN; //LN to click on
-        public GameObject LymphNodeText; // The parent GameObject that contains text and its arrow image
+        public GameObject targetOrgan; //Organ to click on
+        public GameObject OrganText; // The parent GameObject that contains text and its arrow image
         
-        //public Text LNnameText; //The UI text element to display LN name
+        //public Text OrganName; //The UI text element to display Organ name
         
-        public string LymphNodeName; //The name of lymph node
+        public string OrganName; //The name of Organ
+        public Material outlineMat; //The material used for the outline
+        private MeshRenderer meshRenderer; //The MeshRenderer component of each organ
     }
 
-    public InteractionData[] interactionLymphNodes; //Use array to hold interaction data for multiple objects
+    public InteractionData[] interactionOrgans; //Use array to hold interaction data for multiple objects
 
 
     void Start()
     {
         //Ensure all texts and their arrow children are hidden at the start
-        foreach(var data in interactionLymphNodes)
+        foreach(var data in interactionOrgans)
         {
-            if(data.LymphNodeText != null)
+            if(data.OrganText != null)
             {
-                data.LymphNodeText.SetActive(false);
+                data.OrganText.SetActive(false);
             }
         }
     }
@@ -40,9 +42,9 @@ public class ToggleTextOnClick : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit))
             {
-                foreach(var data in interactionLymphNodes)
+                foreach(var data in interactionOrgans)
                 {
-                    if(hit.transform.gameObject == data.targetLN)
+                    if(hit.transform.gameObject == data.targetOrgan)
                     {
                         ToggleInteraction(data);
                         break;
@@ -55,27 +57,27 @@ public class ToggleTextOnClick : MonoBehaviour
     void ToggleInteraction(InteractionData data)
     {
         //Check if the text and arrow are currently active
-        bool isActive = data.LymphNodeText.activeSelf;
+        bool isActive = data.OrganText.activeSelf;
 
         //Toggle the visibility
-        data.LymphNodeText.SetActive(!isActive);
+        data.OrganText.SetActive(!isActive);
 
 
-        //Show the parent GameObj (LNtext and arrow)
-        /*if(data.LymphNodeText != null)
+        //Show the parent GameObj (Organtext and arrow)
+        /*if(data.OrganText != null)
         {
-            data.LymphNodeText.SetActive(true);
-            //data.LNnameText.text = data.LNname;
+            data.OrganText.SetActive(true);
+            //data.OrganText.text = data.LNname;
         }*/
 
         //Hide other UI elements
-        foreach(var otherData in interactionLymphNodes)
+        foreach(var otherData in interactionOrgans)
         {
             if(otherData != data)
             {
-                if(otherData.LymphNodeText != null)
+                if(otherData.OrganText != null)
                 {
-                    //otherData.LymphNodeText.SetActive(false);
+                    //otherData.OrganText.SetActive(false);
                 }
             }
         }
