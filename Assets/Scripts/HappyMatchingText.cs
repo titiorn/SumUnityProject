@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Video;
+using UnityEngine.UI;
 
-public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [System.Serializable]
     public class DraggableText
@@ -13,33 +13,37 @@ public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler,
         public TextMeshProUGUI textObj; //Text to be dragged
         [HideInInspector] public RectTransform rectTransform;
         [HideInInspector] public CanvasGroup canvasGroup;
-
-        public GameObject placer; //Placer for each text
+        public Collider2D placer; //Placer for each text
         [HideInInspector] public bool isPlacedCorrectly; //Status of Placement
     }
 
     public List<DraggableText> draggableTexts; //List of draggable texts
-    //public Animator sceneAnimator; //Animator for the scene Animation
-    public VideoPlayer videoPlayer;
+    public Button submitButton;
+    public GameObject hoorayPopup;
+    public GameObject sadPopup;
     private Canvas canvas;
     private DraggableText currentDraggableText;
 
     
     private void Awake()
     {
-        canvas = GetComponentInParent<Canvas>();
+        //canvas = GetComponentInParent<Canvas>();
 
         //cache RectTransform and CanvasGroup for each draggable text
         foreach(var draggable in draggableTexts)
         {
-            draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
-            draggable.canvasGroup = draggable.textObj.gameObject.AddComponent<CanvasGroup>();
+            //draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
+            //draggable.canvasGroup = draggable.textObj.gameObject.AddComponent<CanvasGroup>();
             draggable.isPlacedCorrectly = false; //Initializa placement status
         }
 
+        submitButton.onClick.AddListener(OnSubmit);
+        hoorayPopup.SetActive(false); //Ensure pop-ups are initially inactive
+        sadPopup.SetActive(false);
+
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    /*public void OnBeginDrag(PointerEventData eventData)
     {
         currentDraggableText = GetDraggableTextUnderPointer(eventData);
         if(currentDraggableText != null)
@@ -48,9 +52,9 @@ public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler,
             currentDraggableText.canvasGroup.blocksRaycasts = false; //Allow text to be dragged through other UI elements
         }
 
-    }
+    }*/
 
-    public void OnDrag(PointerEventData eventData)
+    /*public void OnDrag(PointerEventData eventData)
     {
         if(currentDraggableText != null)
         {
@@ -58,43 +62,35 @@ public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler,
             currentDraggableText.rectTransform.localPosition = localPoint;
         }
 
-    }
+    }*/
 
     public void OnEndDrag(PointerEventData eventData)
     {
         if(currentDraggableText != null)
         {
-            currentDraggableText.canvasGroup.alpha = 1f;
-            currentDraggableText.canvasGroup.blocksRaycasts = true;
+            //currentDraggableText.canvasGroup.alpha = 1f;
+            //currentDraggableText.canvasGroup.blocksRaycasts = true;
 
-            //Check if the text is placed in the correct spot
-            if(RectTransformUtility.RectangleContainsScreenPoint(currentDraggableText.placer.GetComponent<RectTransform>(), eventData.position, canvas.worldCamera))
+            if(currentDraggableText.placer != null)
             {
-                currentDraggableText.rectTransform.localPosition = currentDraggableText.placer.GetComponent<RectTransform>().localPosition;
-                currentDraggableText.isPlacedCorrectly = true;
+                //Check if the text is placed in the correct spot
+                Vector2 localPoint;
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out localPoint);
+                currentDraggableText.isPlacedCorrectly = currentDraggableText.placer.OverlapPoint(Input.mousePosition);
+                Debug.Log("Text placed:" + currentDraggableText.textObj.name + "Correctly:" + currentDraggableText.isPlacedCorrectly);
             }
             else
             {
+                Debug.LogError("Placer is not assigned for text:" + currentDraggableText.textObj.name);
                 currentDraggableText.isPlacedCorrectly = false;
             }
 
             currentDraggableText = null;
 
-            //Check if all texts are correctly placed
-            /*if(AllTextsPlacedCorrectly())
-            {
-                PlayAnimation();
-            }*/
-
-            if(AllTextsPlacedCorrectly())
-            {
-                PlayVideo();
-            }
-
         }
     }
     
-    private DraggableText GetDraggableTextUnderPointer(PointerEventData eventData)
+    /*private DraggableText GetDraggableTextUnderPointer(PointerEventData eventData)
     {
         foreach(var draggable in draggableTexts)
         {
@@ -104,42 +100,36 @@ public class HappyMatchingText : MonoBehaviour, IBeginDragHandler, IDragHandler,
             }
         }
         return null;
-    }
+    }*/
 
-    private bool AllTextsPlacedCorrectly()
+    private void OnSubmit()
     {
+        bool allCorrect = true;
+
         foreach(var draggable in draggableTexts)
         {
             if(!draggable.isPlacedCorrectly)
             {
-                return false; //If any text is not correctly placed, return false
+                Debug.Log("Text not placed correctly:" + draggable.textObj.name);
+                allCorrect = false;
+                break;
             }
+        
         }
-        return true; //All texts are correctly placed
-    }
 
-    /*private void PlayAnimation()
-    {
-        //Trigger the scene animation
-        if(sceneAnimator != null)
+        if(allCorrect)
         {
-            sceneAnimator.SetTrigger("PlayAnimation");
+            Debug.Log("All texts placed correctly.");
+            hoorayPopup.SetActive(true);
+            sadPopup.SetActive(false);
         }
         else
         {
-            Debug.LogError("Animator component is not assigned!");
-        }
-    }*/
-
-    private void PlayVideo()
-    {
-        if(videoPlayer != null)
-        {
-            videoPlayer.Play();
-        }
-        else
-        {
-            Debug.LogError("VideoPlayer component is not assigned!");
+            Debug.Log("Not all texts are placed correctly.");
+            sadPopup.SetActive(true);
+            hoorayPopup.SetActive(false);
         }
     }
+
+  
 }
