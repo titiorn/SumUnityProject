@@ -27,9 +27,9 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
     
     private void Awake()
     {
-        //canvas = GetComponentInParent<Canvas>();
+        canvas = GetComponentInParent<Canvas>();
 
-        //cache RectTransform and CanvasGroup for each draggable text
+        //Cache RectTransform and CanvasGroup for each draggable text
         foreach(var draggable in draggableTexts)
         {
             //draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
@@ -66,10 +66,10 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(currentDraggableText != null)
+        /*if(currentDraggableText != null)
         {
             //currentDraggableText.canvasGroup.alpha = 1f;
-            //currentDraggableText.canvasGroup.blocksRaycasts = true;
+            //currentDraggableText.canvasGroup.blocksRaycasts = true;*/
 
             if(currentDraggableText.placer != null)
             {
@@ -85,9 +85,9 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
                 currentDraggableText.isPlacedCorrectly = false;
             }
 
-            currentDraggableText = null;
+            /*currentDraggableText = null;
 
-        }
+        }*/
     }
     
     /*private DraggableText GetDraggableTextUnderPointer(PointerEventData eventData)
