@@ -3,20 +3,35 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public enum TextType{
+        Mandi,
+        MedRetro,
+        SupCer,
+        HyoidVenous,
+        Trachea,
+        Thyroid
+    }
+
+
     [System.Serializable]
     public class DraggableText
     {
-        public TextMeshProUGUI textObj; //Text to be dragged
-        [HideInInspector] public RectTransform rectTransform;
+        public RectTransform textObj; //Text to be dragged
+        public RectTransform finalPos;
         [HideInInspector] public CanvasGroup canvasGroup;
     }
   
     public List<DraggableText> draggableTexts; //List of draggable texts
     private Canvas canvas;
     private DraggableText currentDraggableText;
+
+    public Button submitButton;
+    public GameObject hoorayPopup;
+    public GameObject sadPopup;
 
     private void Awake()
     {
@@ -25,7 +40,6 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         //cache RectTransform and CanvasGroup for each draggable text
         foreach(var draggable in draggableTexts)
         {
-            draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
             draggable.canvasGroup = draggable.textObj.gameObject.AddComponent<CanvasGroup>();
         }
     }
@@ -46,7 +60,7 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         if(currentDraggableText != null)
         {
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
-            currentDraggableText.rectTransform.localPosition = localPoint;
+            currentDraggableText.textObj.localPosition = localPoint;
         }
 
     }
@@ -67,7 +81,7 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         foreach(var draggable in draggableTexts)
         {
-            if(RectTransformUtility.RectangleContainsScreenPoint(draggable.rectTransform,eventData.position, canvas.worldCamera))
+            if(RectTransformUtility.RectangleContainsScreenPoint(draggable.textObj,eventData.position, canvas.worldCamera))
             {
                 return draggable;
             }
