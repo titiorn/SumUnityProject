@@ -1246,33 +1246,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   draggableTexts:
   - textObj: {fileID: 1229693355}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 1751716096}
     isPlacedCorrectly: 0
   - textObj: {fileID: 1560730382}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 32168485}
     isPlacedCorrectly: 0
   - textObj: {fileID: 2092568375}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 995102047}
     isPlacedCorrectly: 0
   - textObj: {fileID: 1928619555}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 839130776}
     isPlacedCorrectly: 0
   - textObj: {fileID: 1190831654}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 1759789608}
     isPlacedCorrectly: 0
   - textObj: {fileID: 1370363514}
-    rectTransform: {fileID: 0}
-    canvasGroup: {fileID: 0}
     placer: {fileID: 58565319}
     isPlacedCorrectly: 0
   submitButton: {fileID: 2119276771}
@@ -2429,7 +2417,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: dc1bdd4a3e4a58f4c8ad18ff66b428bc, type: 3}
+  m_Texture: {fileID: 2800000, guid: e038aafce2dd0874f91e351c261e2e03, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3796,7 +3784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: af378c4f0e99af045a20cbcb322c1421, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1a97269773e3f7d4998a71fc056f93e8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5798,7 +5786,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: f593f1ccffaed29428b717a32f0ffa68, type: 3}
+  m_Texture: {fileID: 2800000, guid: 96bed93cd0869b248a1a3dda66f5953f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

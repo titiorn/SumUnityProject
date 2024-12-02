@@ -11,8 +11,6 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
     public class DraggableText
     {
         public TextMeshProUGUI textObj; //Text to be dragged
-        [HideInInspector] public RectTransform rectTransform;
-        [HideInInspector] public CanvasGroup canvasGroup;
         public Collider2D placer; //Placer for each text
         [HideInInspector] public bool isPlacedCorrectly; //Status of Placement
     }
@@ -32,8 +30,6 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
         //Cache RectTransform and CanvasGroup for each draggable text
         foreach(var draggable in draggableTexts)
         {
-            //draggable.rectTransform = draggable.textObj.GetComponent<RectTransform>();
-            //draggable.canvasGroup = draggable.textObj.gameObject.AddComponent<CanvasGroup>();
             draggable.isPlacedCorrectly = false; //Initializa placement status
         }
 
@@ -43,34 +39,9 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
 
     }
 
-    /*public void OnBeginDrag(PointerEventData eventData)
-    {
-        currentDraggableText = GetDraggableTextUnderPointer(eventData);
-        if(currentDraggableText != null)
-        {
-            currentDraggableText.canvasGroup.alpha = 0.6f; //Control the visibility of text while dragging
-            currentDraggableText.canvasGroup.blocksRaycasts = false; //Allow text to be dragged through other UI elements
-        }
-
-    }*/
-
-    /*public void OnDrag(PointerEventData eventData)
-    {
-        if(currentDraggableText != null)
-        {
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, eventData.position, canvas.worldCamera, out Vector2 localPoint);
-            currentDraggableText.rectTransform.localPosition = localPoint;
-        }
-
-    }*/
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        /*if(currentDraggableText != null)
-        {
-            //currentDraggableText.canvasGroup.alpha = 1f;
-            //currentDraggableText.canvasGroup.blocksRaycasts = true;*/
-
             if(currentDraggableText.placer != null)
             {
                 //Check if the text is placed in the correct spot
@@ -84,23 +55,8 @@ public class HappyMatchingText : MonoBehaviour //, IBeginDragHandler, IDragHandl
                 Debug.LogError("Placer is not assigned for text:" + currentDraggableText.textObj.name);
                 currentDraggableText.isPlacedCorrectly = false;
             }
-
-            /*currentDraggableText = null;
-
-        }*/
     }
     
-    /*private DraggableText GetDraggableTextUnderPointer(PointerEventData eventData)
-    {
-        foreach(var draggable in draggableTexts)
-        {
-            if(RectTransformUtility.RectangleContainsScreenPoint(draggable.rectTransform,eventData.position, canvas.worldCamera))
-            {
-                return draggable;
-            }
-        }
-        return null;
-    }*/
 
     private void OnSubmit()
     {
