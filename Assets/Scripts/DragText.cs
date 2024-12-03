@@ -15,6 +15,9 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
         RMedRetro,
         LSupCer,
         RSupCer,
+        SupCer,
+        Pop,
+
     }
 
 
