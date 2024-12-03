@@ -788,7 +788,7 @@ PrefabInstance:
     - target: {fileID: 2667349984772126567, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_Name
-      value: ExamRoom
+      value: ExamRoom@zero
       objectReference: {fileID: 0}
     - target: {fileID: 3037155527953448340, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
