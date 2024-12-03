@@ -10,11 +10,14 @@ public class GameManager : MonoBehaviour
     public GameObject hooray;
     public GameObject sadFace;
 
-    private void Awake(){
-        if(singleton == null){
+    private void Awake()
+    {
+        if(singleton == null)
+        {
             singleton = this;
         }
-        else{
+        else
+        {
             Destroy(this);
         }
     }
@@ -23,17 +26,17 @@ public class GameManager : MonoBehaviour
     {
         
             Debug.Log("score " + score);
-        if(score == 6)
-        {
-            Debug.Log("success");
-            hooray.SetActive(true);
-            sadFace.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("failure");
-            hooray.SetActive(false);
-            sadFace.SetActive(true);
-        }
+            if(score == 6)
+            {
+                Debug.Log("success");
+                hooray.SetActive(true);
+                sadFace.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("failure");
+                hooray.SetActive(false);
+                sadFace.SetActive(true);
+            }
     }
 }

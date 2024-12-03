@@ -7,13 +7,14 @@ using UnityEngine.UI;
 
 public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    public enum TextType{
-        Mandi,
-        MedRetro,
-        SupCer,
-        HyoidVenous,
-        Trachea,
-        Thyroid
+    public enum TextType
+    {
+        LMandi,
+        RMandi,
+        LMedRetro,
+        RMedRetro,
+        LSupCer,
+        RSupCer,
     }
 
 
@@ -21,7 +22,7 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     public class DraggableText
     {
         public RectTransform textObj; //Text to be dragged
-        public RectTransform finalPos;
+        //public RectTransform finalPos;
         [HideInInspector] public CanvasGroup canvasGroup;
     }
   
@@ -29,9 +30,9 @@ public class DragText : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     private Canvas canvas;
     private DraggableText currentDraggableText;
 
-    public Button submitButton;
-    public GameObject hoorayPopup;
-    public GameObject sadPopup;
+    //public Button submitButton;
+    //public GameObject hoorayPopup;
+    //public GameObject sadPopup;
 
     private void Awake()
     {
