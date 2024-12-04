@@ -14,8 +14,7 @@ public class TextCtrl : MonoBehaviour
 
         if(placerCtrl.textType == textType)
         {
-            GameManager.singleton.score +=1;
-            FLHL_GameManager.singleton.score +=1;
+            DnDScoreSetting.singleton.score +=1;
         }
     }
 
@@ -25,8 +24,7 @@ public class TextCtrl : MonoBehaviour
 
         if(placerCtrl.textType == textType)
         {
-            GameManager.singleton.score -=1;
-            FLHL_GameManager.singleton.score -=1;
+            DnDScoreSetting.singleton.score -=1;
         }
     }
 

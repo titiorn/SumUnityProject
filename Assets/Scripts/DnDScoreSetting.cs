@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class DnDScoreSetting : MonoBehaviour
 {
-    public static GameManager singleton;
+    public static DnDScoreSetting singleton;
 
     public int score;
     public GameObject hooray;
@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnClickSubmit()
+    public void OnClickSubmit(int maxScore)
     {
         
             Debug.Log("score " + score);
-            if(score == 6)
+            if(score == maxScore)
             {
                 Debug.Log("success");
                 hooray.SetActive(true);
