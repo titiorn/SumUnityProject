@@ -7022,7 +7022,7 @@ GameObject:
   - component: {fileID: 1999791422}
   - component: {fileID: 1999791423}
   m_Layer: 0
-  m_Name: Logo_Image
+  m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
