@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/02LocationLearning.unity
     guid: 4ab124429a0eed648b3eccd23b08b253
   - enabled: 1
+    path: Assets/Scenes/03PlayDragnDrop.unity
+    guid: 287012cfb3519bf499a8e58aaad01c02
+  - enabled: 1
     path: Assets/Scenes/04USRoom.unity
     guid: 4a195a70f1ed38c46a937c4b74eba1f7
   - enabled: 1
