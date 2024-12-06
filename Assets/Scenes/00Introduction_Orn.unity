@@ -1045,7 +1045,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 04USroom_Areej
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &316433213
@@ -6510,10 +6510,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1396793996661422282, guid: 4d6fa29e6aee7448680f415e9f64e908,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall-right
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976374319056641874, guid: 4d6fa29e6aee7448680f415e9f64e908,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall-back
+      objectReference: {fileID: 0}
     - target: {fileID: 2330919374798357746, guid: 4d6fa29e6aee7448680f415e9f64e908,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3225792456269352250, guid: 4d6fa29e6aee7448680f415e9f64e908,
+        type: 3}
+      propertyPath: m_Name
+      value: Wall-left
       objectReference: {fileID: 0}
     - target: {fileID: 3680468745040708335, guid: 4d6fa29e6aee7448680f415e9f64e908,
         type: 3}
@@ -7953,6 +7968,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1969400716}
   - {fileID: 29248828}
+  - {fileID: 1967563323}
   - {fileID: 986635607}
   - {fileID: 1815831852}
-  - {fileID: 1967563323}
