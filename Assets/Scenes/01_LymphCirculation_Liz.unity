@@ -297,9 +297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This blue area shows the drainage path of five lymphnodal regions:\n \n1)
-    submandibular\n2) parotid \n3) dorsal superficial cervical\n4) ventral superficial
-    cervical"
+  m_text: This yellow area shows the drainage path of the axillary lymphnodal region.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9ea794b3e9aae847862e088332105e8, type: 2}
   m_sharedMaterial: {fileID: -6881847321561217414, guid: c9ea794b3e9aae847862e088332105e8,
@@ -964,9 +962,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "This blue area shows the drainage path of five lymphnodal regions:\n \n1)
-    submandibular\n2) parotid \n3) dorsal superficial cervical\n4) ventral superficial
-    cervical"
+  m_text: This pink area shows the drainage path of five lymphnodal regions:<br><br>1)
+    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5)popliteal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9ea794b3e9aae847862e088332105e8, type: 2}
   m_sharedMaterial: {fileID: -6881847321561217414, guid: c9ea794b3e9aae847862e088332105e8,
@@ -1118,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1153808058
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1139,7 +1136,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: -41, y: -80}
-  m_SizeDelta: {x: 600, y: 400}
+  m_SizeDelta: {x: 600, y: 500}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1153808059
 MonoBehaviour:
@@ -2301,7 +2298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImagePanel: {fileID: 2011932063302358322}
-  info_text: 1
+  info_text: This yellow area shows the drainage path of the axillary lymphnodal
+    region.
   textObject: {fileID: 1153808057}
   infoText: {fileID: 1194362732}
 --- !u!1 &4854866595002529329
@@ -2852,7 +2850,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImagePanel: {fileID: 2011932063302358322}
-  info_text: 2
+  info_text: This pink area shows the drainage path of five lymphnodal regions:<br><br>1)
+    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5)popliteal
   textObject: {fileID: 1153808057}
   infoText: {fileID: 1194362732}
 --- !u!135 &8095650771938397177
@@ -3471,7 +3470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myImagePanel: {fileID: 2011932063302358322}
-  info_text: This blue area shows the drainage path of five lymphnodal regions:<br><br>1)
+  info_text: This blue area shows the drainage path of four lymphnodal regions:<br><br>1)
     submandibular<br>2) parotid <br>3) dorsal superficial cervical<br>4) ventral
     superficial cervical
   textObject: {fileID: 1153808057}
