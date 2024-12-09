@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ManageFBVisibility : MonoBehaviour
 {
+
     public GameObject hooray;
     public GameObject sadFace;
 
@@ -13,4 +14,5 @@ public class ManageFBVisibility : MonoBehaviour
         sadFace.SetActive(false);
     }
     
+
 }
