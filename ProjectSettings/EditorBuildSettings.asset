@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/05_Camera360_Liz.unity
     guid: af58c78a44c9a41929e0c2c7a9b78099
+  - enabled: 1
+    path: Assets/Scenes/06Credits.unity
+    guid: a55cd9f3472e4416f8ab71c83890c0a7
   m_configObjects: {}
