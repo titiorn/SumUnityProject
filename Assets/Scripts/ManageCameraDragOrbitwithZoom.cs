@@ -95,7 +95,8 @@ public class ManageCameraDragOrbitwithZoom : MonoBehaviour
 
         //Manage Zoom using field of view
         float fieldOfView = transform.GetComponent<Camera>().fieldOfView;
-        transform.GetComponent<Camera>().fieldOfView = Mathf.Clamp(fieldOfView = Input.mouseScrollDelta.y * zoomSpeed, fovMin, fovMax);
+        //Debug.Log(Input.mouseScrollDelta.y);
+        transform.GetComponent<Camera>().fieldOfView = Mathf.Clamp(fieldOfView + Input.mouseScrollDelta.y * zoomSpeed, fovMin, fovMax);
 
         //Store Value of Mouse position as previous
         previousMousePos = Input.mousePosition;
