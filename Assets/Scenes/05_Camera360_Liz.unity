@@ -1747,7 +1747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1778423851}
-  orbitSpeed: 0.3
+  orbitSpeed: 10
   yMinLimit: -20
   yMaxLimit: 90
   smoothTime: 1
@@ -2786,7 +2786,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 468815199}
         m_TargetAssemblyTypeName: LoadNewScene, Assembly-CSharp
         m_MethodName: LoadSceneByName
         m_Mode: 5
