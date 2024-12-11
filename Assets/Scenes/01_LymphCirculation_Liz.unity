@@ -432,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Lymphatic Circulation
+  m_text: "   Visualising Lymphatic Circulation\n   Click each section to learn more!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55eb3f5c1bf496442a4132e4c7bda1f0, type: 2}
   m_sharedMaterial: {fileID: -1941894741755202062, guid: 55eb3f5c1bf496442a4132e4c7bda1f0,
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -963,7 +963,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: This pink area shows the drainage path of five lymphnodal regions:<br><br>1)
-    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5)popliteal
+    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5
+    ) popliteal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c9ea794b3e9aae847862e088332105e8, type: 2}
   m_sharedMaterial: {fileID: -6881847321561217414, guid: c9ea794b3e9aae847862e088332105e8,
@@ -1135,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: -80}
+  m_AnchoredPosition: {x: -10, y: -280}
   m_SizeDelta: {x: 600, y: 500}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1153808059
@@ -1189,7 +1190,7 @@ GameObject:
   - component: {fileID: 1165046900}
   - component: {fileID: 1165046899}
   m_Layer: 5
-  m_Name: Navigation_Canvas
+  m_Name: UI_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1802,7 +1803,7 @@ GameObject:
   - component: {fileID: 2054995359}
   - component: {fileID: 2054995358}
   m_Layer: 5
-  m_Name: LymphCirc_Panel
+  m_Name: Title_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1826,7 +1827,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 100}
+  m_SizeDelta: {x: 1920, y: 120}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2054995358
 MonoBehaviour:
@@ -1917,7 +1918,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6282699709994263595}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1988,7 +1989,7 @@ Transform:
   m_GameObject: {fileID: 4110564063887814256}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.005, y: -0.0378, z: -0.1275}
+  m_LocalPosition: {x: -0.0061, y: -0.0401, z: -0.1087}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2064,7 +2065,7 @@ Transform:
   m_GameObject: {fileID: 6900750853019472419}
   serializedVersion: 2
   m_LocalRotation: {x: 0.55945945, y: -0.02788383, z: 0.82838774, w: 0.0011905191}
-  m_LocalPosition: {x: -10.9, y: -1.4, z: -4}
+  m_LocalPosition: {x: -11.8, y: 2.2, z: -4.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2201,7 +2202,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 21
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2227,13 +2228,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737657061766402567}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6665193, y: -0.019469865, z: 0.74513304, w: 0.012231139}
-  m_LocalPosition: {x: -13.8, y: -3.6, z: -0.8}
+  m_LocalRotation: {x: 0.711609, y: -0.01834913, z: 0.7022415, w: 0.011527058}
+  m_LocalPosition: {x: -13.88, y: -0.65, z: 1.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5977295053898351494}
-  m_LocalEulerAnglesHint: {x: 177.402, y: -96.36499, z: 0.44299316}
+  m_LocalEulerAnglesHint: {x: 177.583, y: -89.229004, z: 0.56900024}
 --- !u!33 &3391191718180080515
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2258,13 +2259,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4854866595002529329}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7186712, y: 0.13415514, z: 0.67346823, w: -0.10933823}
-  m_LocalPosition: {x: -16.7, y: -4.8, z: 0.8}
+  m_LocalRotation: {x: 0.77245426, y: 0.00066734065, z: 0.6350634, w: -0.0029226618}
+  m_LocalPosition: {x: -19.8, y: -0.1, z: 3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5317469659290166177}
-  m_LocalEulerAnglesHint: {x: -19.746, y: 94.202, z: 177.226}
+  m_LocalEulerAnglesHint: {x: -0.307, y: 101.15, z: 180.154}
 --- !u!1 &4110564063887814256
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,7 +2280,7 @@ GameObject:
   - component: {fileID: 8458236903004428224}
   - component: {fileID: 9056629955117502491}
   m_Layer: 0
-  m_Name: LN_Neck
+  m_Name: LN_Blue_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2380,7 +2381,7 @@ GameObject:
   - component: {fileID: 5594104550881287326}
   - component: {fileID: 4582874851454305485}
   m_Layer: 0
-  m_Name: LN_FrontLimb
+  m_Name: LN_Yellow_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,7 +2396,7 @@ Transform:
   m_GameObject: {fileID: 5161554319607122093}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: 0.001, z: -0.059}
+  m_LocalPosition: {x: 0.001, y: -0.024, z: -0.013}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2413,12 +2414,12 @@ PrefabInstance:
     - target: {fileID: 1179869281841925205, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_Name
-      value: asdasdasqa-3Mesh-Danny
+      value: asdasdasqa_3mesh_ByDanny
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.078
+      value: 0.259
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
@@ -2433,22 +2434,22 @@ PrefabInstance:
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0151175
+      value: -0.015071068
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7244947
+      value: -0.7143161
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0030560833
+      value: -0.0032773414
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6891079
+      value: 0.6996532
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
@@ -2458,7 +2459,7 @@ PrefabInstance:
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 87.144
+      value: 88.824
       objectReference: {fileID: 0}
     - target: {fileID: 1951303770258609903, guid: f68c83ad674494d1ea69314c06fa4790,
         type: 3}
@@ -2513,7 +2514,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!20 &5735786781382087664
 Camera:
@@ -2548,7 +2549,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 35
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2592,7 +2593,7 @@ Transform:
   m_GameObject: {fileID: 6282699709994263595}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: -0.001, z: 0.045}
+  m_LocalPosition: {x: -0.004, y: -0.002, z: 0.09}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2640,7 +2641,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 31
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -2665,7 +2666,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4110564063887814256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2714,7 +2715,7 @@ GameObject:
   - component: {fileID: 8095650771938397177}
   - component: {fileID: 7949152223905429991}
   m_Layer: 0
-  m_Name: LN_BackLimb
+  m_Name: LN_Pink_Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2826,7 +2827,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065319613829089443}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2834,8 +2835,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -10, y: 35}
+  m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &7949152223905429991
 MonoBehaviour:
@@ -2851,7 +2852,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myImagePanel: {fileID: 2011932063302358322}
   info_text: This pink area shows the drainage path of five lymphnodal regions:<br><br>1)
-    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5)popliteal
+    medial illiac<br>2) lateral sacral<br>3) hypogastric<br>4) superficial inguinal<br>5
+    ) popliteal
   textObject: {fileID: 1153808057}
   infoText: {fileID: 1194362732}
 --- !u!135 &8095650771938397177
@@ -2873,7 +2875,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &8220121824797885485
 MeshRenderer:
@@ -2882,7 +2884,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5161554319607122093}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3185,6 +3187,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3127048119316226821, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4315125893662579932, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3268,42 +3275,57 @@ PrefabInstance:
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.552
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.813
+      value: 0.612
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.224
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.62251467
+      value: 0.6224214
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.01078889
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7826082
+      value: -0.78249043
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.013563481
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.447
       objectReference: {fileID: 0}
     - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -103
+      value: -102.992
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113470518256946710, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.935
+      objectReference: {fileID: 0}
+    - target: {fileID: 7113470518257195992, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7873505414970260379, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
@@ -3335,6 +3357,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -29.359
       objectReference: {fileID: 0}
+    - target: {fileID: 8046482858469164956, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -3353,42 +3380,52 @@ PrefabInstance:
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.566
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.14
+      value: -0.341
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.224
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.62251467
+      value: 0.6224214
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.01078889
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7826082
+      value: -0.78249043
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.013563481
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0.447
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -103
+      value: -102.992
+      objectReference: {fileID: 0}
+    - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.935
       objectReference: {fileID: 0}
     - target: {fileID: 8046482858469233834, guid: baf5f87737291c844aabe65a81f830b1,
         type: 3}
@@ -3435,7 +3472,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8672038831313965669
 MonoBehaviour:
@@ -3482,8 +3519,8 @@ SceneRoots:
   - {fileID: 1286578522}
   - {fileID: 22445259}
   - {fileID: 662210413}
+  - {fileID: 1165046902}
   - {fileID: 8413410143888159992}
   - {fileID: 5407869212511647457}
-  - {fileID: 1165046902}
   - {fileID: 1123648497}
   - {fileID: 6705329805340629090}
