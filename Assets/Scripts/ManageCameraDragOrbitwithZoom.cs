@@ -41,7 +41,7 @@ public class ManageCameraDragOrbitwithZoom : MonoBehaviour
     private float fovMax = 90.0f;
 
     [SerializeField]
-    private  float zoomSpeed = 0.05f;
+    private  float zoomSpeed = 3.0f;
     private Vector3 previousMousePos;
 
     // Start is called before the first frame update
