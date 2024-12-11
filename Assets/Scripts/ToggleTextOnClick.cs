@@ -13,13 +13,13 @@ public class ToggleTextOnClick : MonoBehaviour
     
         public Outline outlineScript; //Link with Outline Script that assign in each obj
 
-        public void ToggleOutline()
+        /*public void ToggleOutline()
         {
             if(outlineScript != null)
             {
                 outlineScript.enabled = !outlineScript.enabled;
             }
-        }
+        }*/
     
     }
 
@@ -37,11 +37,11 @@ public class ToggleTextOnClick : MonoBehaviour
                 data.ObjText.SetActive(false);
             }
 
-            data.outlineScript = data.targetObj.GetComponent<Outline>();
+            /*data.outlineScript = data.targetObj.GetComponent<Outline>();
             if(data.outlineScript != null)
             {
                 data.outlineScript.enabled = false;
-            }
+            }*/
 
         }
     }
@@ -71,7 +71,7 @@ public class ToggleTextOnClick : MonoBehaviour
     void ToggleInteraction(InteractionData data)
     {
         //Toggle the outline
-        data.ToggleOutline();
+        //data.ToggleOutline();
 
         //Check if the text and arrow are currently active
         bool isActive = data.ObjText.activeSelf;
@@ -88,7 +88,7 @@ public class ToggleTextOnClick : MonoBehaviour
 
                 if(otherData.outlineScript != null)
                 {
-                    otherData.outlineScript.enabled = false;
+                    //otherData.outlineScript.enabled = false;
                 }
 
                 if(otherData.ObjText != null)
